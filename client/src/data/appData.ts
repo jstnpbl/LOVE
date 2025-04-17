@@ -25,7 +25,7 @@ export const photos = [
     position: { left: "25%", top: "50%" },
   },
   {
-    url: "https://images.unsplash.com/photo-1528205267650-9fdef9fef944?w=600&auto=format&fit=crop",
+    url: "https://images.unsplash.com/photo-1516383607781-913a19294fd1?w=600&auto=format&fit=crop",
     caption: "Walking together",
     rotation: -2,
     position: { left: "55%", top: "55%" },
@@ -35,25 +35,39 @@ export const photos = [
 // Timeline events data
 export const timelineEvents = [
   {
-    title: "Our First Date",
-    description: "Remember that little café where we spent hours talking? I knew from that moment you were special.",
+    title: "Just Thinking Of You",
+    description: "Just wanted to say you popped into my head, and it made me smile. Hope you're having a great day! 😊",
     icon: "fas fa-heart",
     iconBgColor: "bg-[#f8b4c4]",
     titleColor: "text-[#f8b4c4]",
   },
   {
-    title: "First \"I Love You\"",
-    description: "Under the stars, when you said those three words, my heart felt like it could fly.",
+    title: "Feeling Lucky",
+    description: "Thinking of all the reasons I'm lucky to have you. You're pretty amazing, you know? ❤️",
     icon: "fas fa-star",
     iconBgColor: "bg-[#b3a6d4]",
     titleColor: "text-[#b3a6d4]",
   },
   {
-    title: "Our Trip Together",
-    description: "Exploring a new city, getting lost together, finding the best food spots - I cherish every moment.",
-    icon: "fas fa-camera",
+    title: "Little Bit Of Love",
+    description: "Hey beautiful! Sending a little bit of love your way to brighten your day. ✨",
+    icon: "fas fa-heart",
     iconBgColor: "bg-[#f9d77e]",
     titleColor: "text-[#f9d77e]",
+  },
+  {
+    title: "You Mean The World",
+    description: "Just a little note to remind you how much you mean to me. You make my world a better place. 🥰",
+    icon: "fas fa-globe",
+    iconBgColor: "bg-[#f8b4c4]",
+    titleColor: "text-[#f8b4c4]",
+  },
+  {
+    title: "Can't Wait To See You",
+    description: "Hope this note finds you happy and smiling. Can't wait to see you! 🤗",
+    icon: "fas fa-smile",
+    iconBgColor: "bg-[#b3a6d4]",
+    titleColor: "text-[#b3a6d4]",
   },
 ];
 
