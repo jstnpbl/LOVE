@@ -14,46 +14,50 @@ function App() {
   const [showConfetti, setShowConfetti] = useState(false);
   const [confettiConfig, setConfettiConfig] = useState({ count: 100 });
 
-  // Create floating hearts background
+  // Create floating hearts background directly in the render method instead of useEffect
   useEffect(() => {
     const createFloatingHearts = () => {
+      // Remove any existing container to avoid duplicates
+      const existingContainer = document.querySelector('.animated-background');
+      if (existingContainer) {
+        document.body.removeChild(existingContainer);
+      }
+    
       const container = document.createElement('div');
       container.className = 'animated-background';
+      container.style.position = "fixed";
+      container.style.top = "0";
+      container.style.left = "0";
+      container.style.width = "100%";
+      container.style.height = "100%";
+      container.style.zIndex = "1"; // Make it visible above background
+      container.style.pointerEvents = "none";
       document.body.appendChild(container);
       
-      // Create many more hearts
-      for (let i = 0; i < 100; i++) {
+      // Create LOTS of hearts
+      for (let i = 0; i < 200; i++) {
         const heart = document.createElement('div');
-        heart.className = 'floating-heart';
         
-        // Randomize heart properties
-        const size = Math.random() * 20 + 10; // Bigger hearts
-        const left = Math.random() * 100;
-        const duration = Math.random() * 15 + 10; // Varied speed
-        const delay = Math.random() * 15; // Staggered starts
-        const drift = Math.random() * 150 - 75; // More sideways movement
-        
-        heart.style.width = `${size}px`;
-        heart.style.height = `${size}px`;
-        heart.style.left = `${left}%`;
-        heart.style.bottom = '-50px';
-        heart.style.opacity = `${Math.random() * 0.5 + 0.3}`; // More visible
-        heart.style.setProperty('--float-duration', `${duration}s`);
-        heart.style.setProperty('--heart-drift', `${drift}px`);
-        heart.style.animationDelay = `${delay}s`;
-        
-        // Randomize color
-        const colors = ['#f8b4c4', '#b3a6d4', '#ffd4df', '#ff94a4', '#ffbdbd'];
-        heart.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        // Create actual heart shape instead of using CSS transforms
+        heart.innerHTML = "❤️"; // Unicode heart
+        heart.style.position = "absolute";
+        heart.style.fontSize = `${Math.random() * 24 + 16}px`; // Bigger hearts
+        heart.style.left = `${Math.random() * 100}%`;
+        heart.style.top = `${Math.random() * 100}%`; // Distribute across whole screen
+        heart.style.opacity = "0.7"; // Very visible
+        heart.style.color = ["#ff4d6d", "#ff758f", "#ff8fa3", "#ffb3c1", "#c5308b"][Math.floor(Math.random() * 5)];
+        heart.style.animation = `floating-heart ${Math.random() * 15 + 10}s ease-in-out infinite`;
+        heart.style.animationDelay = `${Math.random() * 10}s`;
         
         container.appendChild(heart);
       }
     };
     
+    // Initial creation
     createFloatingHearts();
     
-    // Recreate hearts periodically to ensure constant animation
-    const heartInterval = setInterval(createFloatingHearts, 30000);
+    // Recreate hearts every 20 seconds to ensure they're visible
+    const heartInterval = setInterval(createFloatingHearts, 20000);
     
     return () => {
       clearInterval(heartInterval);
@@ -61,6 +65,23 @@ function App() {
       if (container) {
         document.body.removeChild(container);
       }
+    };
+  }, []);
+  
+  // Add direct styling to the CSS
+  useEffect(() => {
+    const style = document.createElement('style');
+    style.innerHTML = `
+      @keyframes floating-heart {
+        0% { transform: translateY(0) rotate(0deg); }
+        50% { transform: translateY(-20px) rotate(10deg); }
+        100% { transform: translateY(0) rotate(0deg); }
+      }
+    `;
+    document.head.appendChild(style);
+    
+    return () => {
+      document.head.removeChild(style);
     };
   }, []);
 

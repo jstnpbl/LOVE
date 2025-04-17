@@ -11,8 +11,60 @@ export default function Special({ onTriggerConfetti }: SpecialProps) {
     }, 400);
   };
   
+  // Enhanced confetti function that shows LOTS of confetti
   const handleCelebrateClick = () => {
-    onTriggerConfetti(150);
+    onTriggerConfetti(300); // Way more confetti!
+    
+    // Create additional confetti directly for better visibility
+    setTimeout(() => {
+      const container = document.body;
+      const colors = ['#f8b4c4', '#b3a6d4', '#f9d77e', '#ffb3c1', '#ff758f'];
+      
+      for (let i = 0; i < 150; i++) {
+        const confetti = document.createElement('div');
+        confetti.style.position = 'fixed';
+        confetti.style.zIndex = '9999';
+        confetti.style.width = `${Math.random() * 15 + 5}px`;
+        confetti.style.height = `${Math.random() * 15 + 5}px`;
+        confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        confetti.style.left = `${Math.random() * 100}%`;
+        confetti.style.top = '0';
+        confetti.style.opacity = '0.9';
+        confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
+        
+        const fallDuration = Math.random() * 4 + 3;
+        const rotation = Math.random() * 360;
+        
+        confetti.style.animation = `direct-fall ${fallDuration}s forwards`;
+        confetti.style.transform = `rotate(${rotation}deg)`;
+        
+        // Add the confetti to the document body
+        container.appendChild(confetti);
+        
+        // Remove after animation completes
+        setTimeout(() => {
+          confetti.remove();
+        }, fallDuration * 1000);
+      }
+    }, 100);
+    
+    // Add the animation style
+    const style = document.createElement('style');
+    style.innerHTML = `
+      @keyframes direct-fall {
+        0% { top: -5%; transform: translateX(0) rotate(0deg); }
+        25% { transform: translateX(${Math.random() * 100 - 50}px) rotate(90deg); }
+        50% { transform: translateX(${Math.random() * 200 - 100}px) rotate(180deg); }
+        75% { transform: translateX(${Math.random() * 100 - 50}px) rotate(270deg); }
+        100% { top: 105%; transform: translateX(${Math.random() * 200 - 100}px) rotate(360deg); }
+      }
+    `;
+    document.head.appendChild(style);
+    
+    // Remove the style after animation completes
+    setTimeout(() => {
+      document.head.removeChild(style);
+    }, 7000);
   };
   
   return (
