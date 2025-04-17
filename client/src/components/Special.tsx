@@ -68,26 +68,26 @@ export default function Special({ onTriggerConfetti }: SpecialProps) {
           <i className="fas fa-heart text-2xl text-[#f8b4c4] animate-heartbeat"></i>
         </div>
         
-        <h3 className="font-dancing text-2xl text-[#4a314d] mb-4 text-center">My Love Letter to You</h3>
+        <h3 className="font-dancing text-2xl text-[#4a314d] mb-4 text-center">My Love Notes to You</h3>
         
         <p className="mb-4 leading-relaxed">
-          My dearest,
+          Just wanted to say you popped into my head, and it made me smile. Hope you're having a great day! 😊
         </p>
         
         <p className="mb-4 leading-relaxed">
-          You make me super happy. Just being around you makes even boring days feel bright and fun. You have this way of making me smile, no matter what.
+          Thinking of all the reasons I'm lucky to have you. You're pretty amazing, you know? ❤️
         </p>
         
         <p className="mb-4 leading-relaxed">
-          You just get me. It's like you can read my mind sometimes! You understand my weird jokes and my quiet moods, and I don't have to pretend to be anyone else around you.
+          Hey beautiful! Sending a little bit of love your way to brighten your day. ✨
         </p>
         
         <p className="mb-4 leading-relaxed">
-          You're so kind and caring. You have such a good heart. You're always thinking about other people and you're so sweet to me. It makes me feel really loved and appreciated.
+          Just a little note to remind you how much you mean to me. You make my world a better place. 🥰
         </p>
         
         <p className="mb-4 leading-relaxed">
-          Life is just more exciting with you. Everything feels like a little adventure when we're together, even the small stuff. You make life feel more vibrant and interesting.
+          Hope this note finds you happy and smiling. Can't wait to see you! 🤗
         </p>
         
         <p className="text-right">

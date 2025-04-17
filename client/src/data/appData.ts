@@ -1,31 +1,31 @@
 // Photo gallery data
 export const photos = [
   {
-    url: "https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=600&auto=format&fit=crop",
+    url: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=600&auto=format&fit=crop",
     caption: "Dinner dates",
     rotation: -5,
     position: { left: "10%", top: "5%" },
   },
   {
-    url: "https://images.unsplash.com/photo-1508766206392-8bd5b83bc4ca?w=600&auto=format&fit=crop",
+    url: "https://images.unsplash.com/photo-1520880867055-1e30d1cb001c?w=600&auto=format&fit=crop",
     caption: "Deep talks with you",
     rotation: 3,
     position: { left: "42%", top: "15%" },
   },
   {
-    url: "https://images.unsplash.com/photo-1535016120720-40c646be5580?w=600&auto=format&fit=crop",
+    url: "https://images.unsplash.com/photo-1505686994434-e3cc5abf1330?w=600&auto=format&fit=crop",
     caption: "Movie nights",
     rotation: -3,
     position: { left: "70%", top: "8%" },
   },
   {
-    url: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=600&auto=format&fit=crop",
+    url: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=600&auto=format&fit=crop",
     caption: "Cozy sleepovers",
     rotation: 4,
     position: { left: "25%", top: "50%" },
   },
   {
-    url: "https://images.unsplash.com/photo-1499781350541-7783f6c6a0c8?w=600&auto=format&fit=crop",
+    url: "https://images.unsplash.com/photo-1528205267650-9fdef9fef944?w=600&auto=format&fit=crop",
     caption: "Walking together",
     rotation: -2,
     position: { left: "55%", top: "55%" },
