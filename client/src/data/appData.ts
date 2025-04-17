@@ -25,7 +25,7 @@ export const photos = [
     position: { left: "25%", top: "50%" },
   },
   {
-    url: "https://images.unsplash.com/photo-1516383607781-913a19294fd1?w=600&auto=format&fit=crop",
+    url: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=600&auto=format&fit=crop",
     caption: "Walking together",
     rotation: -2,
     position: { left: "55%", top: "55%" },
@@ -120,7 +120,7 @@ export const reasons = [
 // Special photos data
 export const specialPhotos = [
   {
-    url: "https://images.unsplash.com/photo-1506869640319-fe1a24fd76dc?w=600&auto=format&fit=crop",
+    url: "https://images.unsplash.com/photo-1556911220-bff31c812dba?w=600&auto=format&fit=crop",
     title: "Cooking Together",
     description: "Creating delicious memories in the kitchen",
   },
@@ -130,7 +130,7 @@ export const specialPhotos = [
     description: "Supporting each other in everything we do",
   },
   {
-    url: "https://images.unsplash.com/photo-1496947850313-7743325fa58c?w=600&auto=format&fit=crop",
+    url: "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=600&auto=format&fit=crop",
     title: "Weekend Adventures",
     description: "Exploring new places side by side",
   },

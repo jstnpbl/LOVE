@@ -9,5 +9,251 @@
 
   body {
     @apply font-sans antialiased bg-background text-foreground;
+    overflow-x: hidden;
   }
+}
+
+/* Hearts animation for background */
+.heart {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: transparent;
+  transform: rotate(45deg);
+  animation: heartFloat 20s linear forwards;
+}
+
+.heart:before,
+.heart:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: inherit;
+  border-radius: 50%;
+}
+
+.heart:before {
+  top: -50%;
+}
+
+.heart:after {
+  left: -50%;
+}
+
+@keyframes heartFloat {
+  0% {
+    transform: rotate(45deg) translateY(0) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: rotate(45deg) translateY(-120vh) translateX(var(--heart-drift, 20px));
+    opacity: 0;
+  }
+}
+
+/* Polaroid photo styling */
+.polaroid {
+  padding: 10px 10px 20px 10px;
+  background-color: white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  transform: rotate(var(--rotation, 0deg));
+  transition: all 0.3s ease-in-out;
+}
+
+.polaroid:hover {
+  transform: scale(1.05) rotate(var(--rotation, 0deg));
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+  z-index: 10;
+}
+
+/* Confetti animation */
+@keyframes confetti-fall {
+  0% {
+    top: -10px;
+    opacity: 0.7;
+    transform: rotate(0deg);
+  }
+  100% {
+    top: 105vh;
+    opacity: 0;
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes confetti-shake {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(var(--shake-distance, 0));
+  }
+}
+
+/* Heartbeat animation */
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-heartbeat {
+  animation: heartbeat 1.5s infinite;
+}
+
+/* Flip animation for cards */
+.reveal-container {
+  perspective: 1000px;
+}
+
+.reveal-card {
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.reveal-container:hover .reveal-card {
+  transform: rotateY(180deg);
+}
+
+.reveal-front, .reveal-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reveal-back {
+  transform: rotateY(180deg);
+}
+
+/* Photo peek effect */
+.photo-peek {
+  transition: transform 0.3s ease;
+}
+
+.photo-peek:hover {
+  transform: translateY(-10px);
+}
+
+/* Floating hearts animation for background */
+.animated-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.floating-heart {
+  position: absolute;
+  background-color: #f8b4c4;
+  opacity: 0.3;
+  transform: rotate(45deg);
+  animation: float-heart var(--float-duration, 15s) linear infinite;
+}
+
+.floating-heart:before,
+.floating-heart:after {
+  content: '';
+  position: absolute;
+  background-color: inherit;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+}
+
+.floating-heart:before {
+  top: -50%;
+}
+
+.floating-heart:after {
+  left: -50%;
+}
+
+@keyframes float-heart {
+  0% {
+    transform: rotate(45deg) translateY(100vh);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.3;
+  }
+  90% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: rotate(45deg) translateY(-100vh) translateX(var(--heart-drift, 50px));
+    opacity: 0;
+  }
+}
+
+/* Slow pulse animation */
+@keyframes pulse-slow {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 3s infinite ease-in-out;
+}
+
+/* Float effect */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: float 3s infinite ease-in-out;
+}
+
+/* Message card hover effect */
+.message-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.message-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }

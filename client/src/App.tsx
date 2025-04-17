@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import Header from "@/components/Header";
 import AudioPlayer from "@/components/AudioPlayer";
@@ -13,6 +13,52 @@ function App() {
   const [showAudioPlayer, setShowAudioPlayer] = useState(true);
   const [showConfetti, setShowConfetti] = useState(false);
   const [confettiConfig, setConfettiConfig] = useState({ count: 100 });
+
+  // Create floating hearts background
+  useEffect(() => {
+    const createFloatingHearts = () => {
+      const container = document.createElement('div');
+      container.className = 'animated-background';
+      document.body.appendChild(container);
+      
+      // Create hearts
+      for (let i = 0; i < 20; i++) {
+        const heart = document.createElement('div');
+        heart.className = 'floating-heart';
+        
+        // Randomize heart properties
+        const size = Math.random() * 15 + 10;
+        const left = Math.random() * 100;
+        const duration = Math.random() * 10 + 15;
+        const delay = Math.random() * 10;
+        const drift = Math.random() * 100 - 50;
+        
+        heart.style.width = `${size}px`;
+        heart.style.height = `${size}px`;
+        heart.style.left = `${left}%`;
+        heart.style.bottom = '-50px';
+        heart.style.opacity = `${Math.random() * 0.2 + 0.1}`;
+        heart.style.setProperty('--float-duration', `${duration}s`);
+        heart.style.setProperty('--heart-drift', `${drift}px`);
+        heart.style.animationDelay = `${delay}s`;
+        
+        // Randomize color
+        const colors = ['#f8b4c4', '#b3a6d4', '#ffd4df'];
+        heart.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        
+        container.appendChild(heart);
+      }
+    };
+    
+    createFloatingHearts();
+    
+    return () => {
+      const container = document.querySelector('.animated-background');
+      if (container) {
+        document.body.removeChild(container);
+      }
+    };
+  }, []);
 
   const triggerConfetti = (count: number = 100) => {
     setConfettiConfig({ count });
