@@ -21,29 +21,29 @@ function App() {
       container.className = 'animated-background';
       document.body.appendChild(container);
       
-      // Create hearts
-      for (let i = 0; i < 20; i++) {
+      // Create many more hearts
+      for (let i = 0; i < 100; i++) {
         const heart = document.createElement('div');
         heart.className = 'floating-heart';
         
         // Randomize heart properties
-        const size = Math.random() * 15 + 10;
+        const size = Math.random() * 20 + 10; // Bigger hearts
         const left = Math.random() * 100;
-        const duration = Math.random() * 10 + 15;
-        const delay = Math.random() * 10;
-        const drift = Math.random() * 100 - 50;
+        const duration = Math.random() * 15 + 10; // Varied speed
+        const delay = Math.random() * 15; // Staggered starts
+        const drift = Math.random() * 150 - 75; // More sideways movement
         
         heart.style.width = `${size}px`;
         heart.style.height = `${size}px`;
         heart.style.left = `${left}%`;
         heart.style.bottom = '-50px';
-        heart.style.opacity = `${Math.random() * 0.2 + 0.1}`;
+        heart.style.opacity = `${Math.random() * 0.5 + 0.3}`; // More visible
         heart.style.setProperty('--float-duration', `${duration}s`);
         heart.style.setProperty('--heart-drift', `${drift}px`);
         heart.style.animationDelay = `${delay}s`;
         
         // Randomize color
-        const colors = ['#f8b4c4', '#b3a6d4', '#ffd4df'];
+        const colors = ['#f8b4c4', '#b3a6d4', '#ffd4df', '#ff94a4', '#ffbdbd'];
         heart.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
         
         container.appendChild(heart);
@@ -52,7 +52,11 @@ function App() {
     
     createFloatingHearts();
     
+    // Recreate hearts periodically to ensure constant animation
+    const heartInterval = setInterval(createFloatingHearts, 30000);
+    
     return () => {
+      clearInterval(heartInterval);
       const container = document.querySelector('.animated-background');
       if (container) {
         document.body.removeChild(container);
