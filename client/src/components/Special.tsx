@@ -75,23 +75,23 @@ export default function Special({ onTriggerConfetti }: SpecialProps) {
         </p>
         
         <p className="mb-4 leading-relaxed">
-          From the moment you came into my life, everything changed. Your love has been my greatest adventure, my deepest comfort, and my truest joy.
+          You make me super happy. Just being around you makes even boring days feel bright and fun. You have this way of making me smile, no matter what.
         </p>
         
         <p className="mb-4 leading-relaxed">
-          Every day with you is a gift. I cherish the way you laugh, how your eyes crinkle when you smile, and how your hand feels in mine. The little things you do - the texts when we're apart, the coffee you make just how I like it, the way you listen when I need to talk - they all mean the world to me.
+          You just get me. It's like you can read my mind sometimes! You understand my weird jokes and my quiet moods, and I don't have to pretend to be anyone else around you.
         </p>
         
         <p className="mb-4 leading-relaxed">
-          I promise to love you, support you, and stand by your side through all of life's adventures. You're my best friend, my confidant, my partner in everything.
+          You're so kind and caring. You have such a good heart. You're always thinking about other people and you're so sweet to me. It makes me feel really loved and appreciated.
         </p>
         
         <p className="mb-4 leading-relaxed">
-          Thank you for being you, and for choosing to share your life with me.
+          Life is just more exciting with you. Everything feels like a little adventure when we're together, even the small stuff. You make life feel more vibrant and interesting.
         </p>
         
         <p className="text-right">
-          Forever yours,<br />
+          With all my love,<br />
           Me
         </p>
         
